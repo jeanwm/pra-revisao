@@ -1,5 +1,26 @@
 #include <stdio.h>
 
+int pesquisaBinaria(int v[], int n, int chave) {
+ 	int inicio = 0, meio, fim;
+ 	fim = n - 1;
+ 	
+	while (inicio <= fim) {
+ 		meio = (inicio + fim) / 2;
+ 		
+		if (chave == v[meio]) {
+ 			return meio;
+ 			
+ 		} else if (chave < v[meio]) {
+ 			fim = meio - 1;
+ 			
+ 		} else {
+ 			inicio = meio + 1;
+ 		}
+ 	}
+ 	 
+	return -1;
+}
+
 int compara(const void* a, const void* b) {
 	return *(int*) a - *(int*) b;
 }
